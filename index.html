@@ -10,7 +10,7 @@
     <button id="btn1">btn1</button>
     <button id="btn2">btn2</button>
     <button id="btn3">btn3</button>
-    <div id="run">hellow</div>
+    <div id="run"></div>
     <script>
       const run = document.getElementById("run");
       const btn1 = document.getElementById("btn1");
@@ -19,6 +19,7 @@
       let btns;
       const hid1 = () => {
         btn1.style.visibility = "hidden";
+        run.innerHTML = "hellow"
         if (btn3.style.visibility === "hidden") {
         btn1.style.visibility = "visible";
         btn2.style.visibility = "hidden";
@@ -35,6 +36,7 @@
       };
 
       const hid2 = () => {
+        run.innerHTML = "bye"
         btn2.style.visibility = "hidden";
         if (btn3.style.visibility === "hidden") {
         btn1.style.visibility = "visible";
@@ -52,6 +54,7 @@
       };
 
       const hid3 = () => {
+        run.innerHTML = "javascript"
         btn3.style.visibility = "hidden";
         
       if (btn1.style.visibility === "hidden") {
@@ -67,6 +70,7 @@
         btn2.style.visibility = "hidden";
       }
       };
+
 
       //visible
       if (btn3.style.visibility === "hidden") {
