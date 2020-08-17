@@ -5,72 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-
+  <style>
+    .div {
+      width: 100vw;
+      height: 100vh;
+    }
+    .ground {
+      width: 50vw;
+      height: 50vh;
+      background-color: cyan;
+      display: fleX;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
   <body>
-    <button id="btn1">btn1</button>
-    <button id="btn2">btn2</button>
-    <button id="btn3">btn3</button>
-    <div id="run"></div>
+    <div class="div">
+      <button id="btn1">btn1</button>
+      <button id="btn2">btn2</button>
+      <button id="btn3">btn3</button>
+      <div id="run"></div>
+      <div class="ground">
+        <button id="1">12</button>
+        <button id="2">12</button>
+        <button id="3">12</button>
+        <button id="4">12</button>
+      </div>
+    </div>
     <script>
       const run = document.getElementById("run");
       const btn1 = document.getElementById("btn1");
       const btn2 = document.getElementById("btn2");
       const btn3 = document.getElementById("btn3");
+      const q1 = document.getElementById("1");
+      const q2 = document.getElementById("2");
+      const q3 = document.getElementById("3");
+      const q4 = document.getElementById("4");
+
       let btns;
       const hid1 = () => {
         btn1.style.visibility = "hidden";
-        run.innerHTML = "hellow"
+        run.innerHTML = "hellow";
         if (btn3.style.visibility === "hidden") {
-        btn1.style.visibility = "visible";
-        btn2.style.visibility = "hidden";
-      }
-      
-      if (btn2.style.visibility === "hidden") {
-        btn3.style.visibility = "visible";
-        btn1.style.visibility = "hidden";
-      }
-      if (btn1.style.visibility === "hidden") {
-        btn2.style.visibility = "visible";
-        btn3.style.visibility = "hidden";
-      }
+          btn1.style.visibility = "visible";
+          btn2.style.visibility = "hidden";
+        }
+
+        if (btn2.style.visibility === "hidden") {
+          btn3.style.visibility = "visible";
+          btn1.style.visibility = "hidden";
+        }
+        if (btn1.style.visibility === "hidden") {
+          btn2.style.visibility = "visible";
+          btn3.style.visibility = "hidden";
+        }
       };
 
       const hid2 = () => {
-        run.innerHTML = "bye"
+        run.innerHTML = "bye";
         btn2.style.visibility = "hidden";
         if (btn3.style.visibility === "hidden") {
-        btn1.style.visibility = "visible";
-        btn2.style.visibility = "hidden";
-      }
-      if (btn1.style.visibility === "hidden") {
-        btn2.style.visibility = "visible";
-        btn3.style.visibility = "hidden";
-      }
-      if (btn2.style.visibility === "hidden") {
-        btn3.style.visibility = "visible";
-        btn1.style.visibility = "hidden";
-      }
-
+          btn1.style.visibility = "visible";
+          btn2.style.visibility = "hidden";
+        }
+        if (btn1.style.visibility === "hidden") {
+          btn2.style.visibility = "visible";
+          btn3.style.visibility = "hidden";
+        }
+        if (btn2.style.visibility === "hidden") {
+          btn3.style.visibility = "visible";
+          btn1.style.visibility = "hidden";
+        }
       };
 
       const hid3 = () => {
-        run.innerHTML = "javascript"
+        run.innerHTML = "javascript";
         btn3.style.visibility = "hidden";
-        
-      if (btn1.style.visibility === "hidden") {
-        btn2.style.visibility = "visible";
-        btn3.style.visibility = "hidden";
-      }
-      if (btn2.style.visibility === "hidden") {
-        btn3.style.visibility = "visible";
-        btn1.style.visibility = "hidden";
-      }
-      if (btn3.style.visibility === "hidden") {
-        btn1.style.visibility = "visible";
-        btn2.style.visibility = "hidden";
-      }
-      };
 
+        if (btn1.style.visibility === "hidden") {
+          btn2.style.visibility = "visible";
+          btn3.style.visibility = "hidden";
+        }
+        if (btn2.style.visibility === "hidden") {
+          btn3.style.visibility = "visible";
+          btn1.style.visibility = "hidden";
+        }
+        if (btn3.style.visibility === "hidden") {
+          btn1.style.visibility = "visible";
+          btn2.style.visibility = "hidden";
+        }
+      };
 
       //visible
       if (btn3.style.visibility === "hidden") {
