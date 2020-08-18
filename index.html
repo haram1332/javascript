@@ -9,6 +9,9 @@
     .div {
       width: 100vw;
       height: 100vh;
+      display: fleX;
+      justify-content: center;
+      align-items: center;
     }
     .ground {
       width: 50vw;
@@ -20,16 +23,18 @@
     }
   </style>
   <body>
+    <button id="btn1">btn1</button>
+    <button id="btn2">btn2</button>
+    <button id="btn3">btn3</button>
     <div class="div">
-      <button id="btn1">btn1</button>
-      <button id="btn2">btn2</button>
-      <button id="btn3">btn3</button>
       <div id="run"></div>
-      <div class="ground">
-        <button id="1">12</button>
-        <button id="2">12</button>
-        <button id="3">12</button>
-        <button id="4">12</button>
+      <div class="ground" id="ground">
+        <div>
+          <button id="1">12</button>
+          <button id="2">12</button>
+          <button id="3">12</button>
+          <button id="4">12</button>
+        </div>
       </div>
     </div>
     <script>
@@ -41,8 +46,7 @@
       const q2 = document.getElementById("2");
       const q3 = document.getElementById("3");
       const q4 = document.getElementById("4");
-
-      let btns;
+      const ground = document.getElementById("ground");
       const hid1 = () => {
         btn1.style.visibility = "hidden";
         run.innerHTML = "hellow";
@@ -109,10 +113,31 @@
         btn3.style.visibility = "visible";
         btn1.style.visibility = "hidden";
       }
+      const while1 = () => {
+        document.getElementById("ground").style.width = "300px";
+
+      };
+      const while2 = () => {
+        document.getElementById("ground").style.height = "300px";
+
+      };
+      const while3 = () => {
+        document.getElementById("ground").style.width = "60vw";
+
+      };
+      const while4 = () => {
+        document.getElementById("ground").style.height = "60vh";
+
+      };
 
       btn1.addEventListener("click", hid1);
       btn2.addEventListener("click", hid2);
       btn3.addEventListener("click", hid3);
+      q1.addEventListener("click", while1);
+      q2.addEventListener("click", while2);
+      q3.addEventListener("click", while3);
+      q4.addEventListener("click", while4);
+
     </script>
   </body>
 </html>
