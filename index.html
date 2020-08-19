@@ -21,11 +21,17 @@
       justify-content: center;
       align-items: center;
     }
+    .color {
+      width: 30px;
+      height: 20px;
+    }
   </style>
   <body>
     <button id="btn1">btn1</button>
     <button id="btn2">btn2</button>
     <button id="btn3">btn3</button>
+    <button id="change">change</button>
+    <div class="color" id="color"></div>
     <div class="div">
       <div id="run"></div>
       <div class="ground" id="ground">
@@ -38,6 +44,7 @@
       </div>
     </div>
     <script>
+      let changecolor = "no";
       const run = document.getElementById("run");
       const btn1 = document.getElementById("btn1");
       const btn2 = document.getElementById("btn2");
@@ -47,6 +54,22 @@
       const q3 = document.getElementById("3");
       const q4 = document.getElementById("4");
       const ground = document.getElementById("ground");
+      const change = document.getElementById("change");
+      const backcolor = () => {
+        if (changecolor === "no") {
+          document.getElementById("color").style.backgroundColor = "chartreuse";
+          changecolor = "yes";
+          console.log(changecolor);
+          return;
+        }
+        if (changecolor === "yes") {
+          document.getElementById("color").style.backgroundColor = "";
+          changecolor = "no";
+          console.log(changecolor + "q");
+          return;
+        }
+      };
+
       const hid1 = () => {
         btn1.style.visibility = "hidden";
         run.innerHTML = "hellow";
@@ -115,21 +138,19 @@
       }
       const while1 = () => {
         document.getElementById("ground").style.width = "300px";
-
       };
       const while2 = () => {
         document.getElementById("ground").style.height = "300px";
-
       };
       const while3 = () => {
         document.getElementById("ground").style.width = "60vw";
-
       };
       const while4 = () => {
         document.getElementById("ground").style.height = "60vh";
-
       };
+      //document.getElementById("testDiv").style.backgroundColor = "#000000";
 
+      change.addEventListener("click", backcolor);
       btn1.addEventListener("click", hid1);
       btn2.addEventListener("click", hid2);
       btn3.addEventListener("click", hid3);
@@ -137,7 +158,6 @@
       q2.addEventListener("click", while2);
       q3.addEventListener("click", while3);
       q4.addEventListener("click", while4);
-
     </script>
   </body>
 </html>
