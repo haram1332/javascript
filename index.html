@@ -17,9 +17,10 @@
       width: 50vw;
       height: 50vh;
       background-color: cyan;
-      display: fleX;
+      display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
     .color {
       width: 30px;
@@ -35,8 +36,12 @@
     <div class="div">
       <div id="run"></div>
       <div class="ground" id="ground">
-        <div>
-          <input type="text" id="colorput" />
+        <div class="range1">
+          <input type="text" id="colorput" /><button id="colorbtn">
+            colorbtn
+          </button>
+        </div>
+        <div class="range2">
           <button id="1">12</button>
           <button id="2">12</button>
           <button id="3">12</button>
@@ -47,7 +52,9 @@
 
     <script>
       let changecolor = "no";
+
       const colorput = document.getElementById("colorput");
+      const colorbtn = document.getElementById("colorbtn");
       const run = document.getElementById("run");
       const btn1 = document.getElementById("btn1");
       const btn2 = document.getElementById("btn2");
@@ -58,6 +65,7 @@
       const q4 = document.getElementById("4");
       const ground = document.getElementById("ground");
       const change = document.getElementById("change");
+      let colorvalue;
       const backcolor = () => {
         if (changecolor === "no") {
           document.getElementById("color").style.backgroundColor = "chartreuse";
@@ -152,7 +160,16 @@
         document.getElementById("ground").style.height = "60vh";
       };
       //document.getElementById("testDiv").style.backgroundColor = "#000000";
+      const color = () => {
+        colorvalue = colorput.value;
+        if (colorvalue === "red") {
+          document.getElementById("ground").style.backgroundColor = "red";
+          console.log(1);
+        }
 
+        
+      };
+      colorbtn.addEventListener("click", color);
       change.addEventListener("click", backcolor);
       btn1.addEventListener("click", hid1);
       btn2.addEventListener("click", hid2);
