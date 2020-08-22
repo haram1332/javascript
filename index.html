@@ -12,6 +12,7 @@
       display: fleX;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
     .ground {
       width: 50vw;
@@ -31,7 +32,11 @@
     <button id="btn1">btn1</button>
     <button id="btn2">btn2</button>
     <button id="btn3">btn3</button>
-    <button id="change">change</button>
+    <button id="change">change</button> <input id="gamemach" /><button
+      id="game"
+    >
+      nextpage
+    </button>
     <div class="color" id="color"></div>
     <div class="div">
       <div id="run"></div>
@@ -52,7 +57,10 @@
 
     <script>
       let changecolor = "no";
-
+      let state;
+      let random;
+      const gamemach = document.getElementById("gamemach");
+      const game = document.getElementById("game");
       const colorput = document.getElementById("colorput");
       const colorbtn = document.getElementById("colorbtn");
       const run = document.getElementById("run");
@@ -166,9 +174,70 @@
           document.getElementById("ground").style.backgroundColor = "red";
           console.log(1);
         }
-
-        
+        if (colorvalue === "blue") {
+          console.log("blue");
+          document.getElementById("ground").style.backgroundColor = "blue";
+        }
       };
+      const winner = () => {
+        console.log("winnner");
+        console.log(state + 2);
+        
+        if (
+          (gamemach.value === "rock" && state === "scissors") ||
+          (gamemach.value === "scissors" && state === "paper") ||
+          (gamemach.value === "paper" && state === "rock")
+        ) {
+          run.innerHTML = "win"
+        }
+        if (
+          (gamemach.value === "rock" && state === "rock") ||
+          (gamemach.value === "scissors" && state === "scissors") ||
+          (gamemach.value === "paper" && state === "paper")
+        ) {
+          run.innerHTML = "tie"
+        }
+        if (
+          (gamemach.value === "rock" && state === "paper") ||
+          (gamemach.value === "scissors" && state === "rock") ||
+          (gamemach.value === "paper" && state === "scissors")
+        ) {
+          run.innerHTML = "loser"
+        }
+        console.log(gamemach.value);
+      };
+      /**/
+      const next = () => {
+        state = "";
+        console.log(state);
+        random = Math.floor(Math.random() * 10);
+        console.log(random + "일");
+        if (random === 0) {
+          next();
+          console.log(0);
+          return;
+        }
+        console.log(state);
+        console.log(random + "이");
+        if (random === 1 || random === 2 || random === 3) {
+          state = "scissors";
+          console.log("실행1");
+        }
+        console.log(state);
+        if (random === 4 || random === 5 || random === 6) {
+          state = "rock";
+          console.log("실행2");
+        }
+        console.log(state);
+        if (random === 7 || random === 8 || random === 9) {
+          state = "paper";
+          console.log("실행3");
+        }
+        console.log(state + 1);
+        winner();
+      };
+
+      game.addEventListener("click", next);
       colorbtn.addEventListener("click", color);
       change.addEventListener("click", backcolor);
       btn1.addEventListener("click", hid1);
