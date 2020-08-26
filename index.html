@@ -182,31 +182,51 @@
           console.log("black");
           document.getElementById("ground").style.backgroundColor = "black";
         }
+        if (colorvalue === "green") {
+          console.log("green");
+          document.getElementById("ground").style.backgroundColor = "green";
+        }
+        if (colorvalue === "yellow") {
+          console.log("yellow");
+          document.getElementById("ground").style.backgroundColor = "yellow";
+        }
+        if (colorvalue === "pink") {
+          console.log("pink");
+          document.getElementById("ground").style.backgroundColor = "pink";
+        }
+        if (colorvalue === "brown") {
+          console.log("brown");
+          document.getElementById("ground").style.backgroundColor = "brown";
+        }
+        if (colorvalue === "violet") {
+          console.log("violet");
+          document.getElementById("ground").style.backgroundColor = "violet";
+        }
       };
       const winner = () => {
         console.log("winnner");
         console.log(state + 2);
-        
+
         if (
           (gamemach.value === "rock" && state === "scissors") ||
           (gamemach.value === "scissors" && state === "paper") ||
           (gamemach.value === "paper" && state === "rock")
         ) {
-          run.innerHTML = "win"
+          run.innerHTML = "win";
         }
         if (
           (gamemach.value === "rock" && state === "rock") ||
           (gamemach.value === "scissors" && state === "scissors") ||
           (gamemach.value === "paper" && state === "paper")
         ) {
-          run.innerHTML = "tie"
+          run.innerHTML = "tie";
         }
         if (
           (gamemach.value === "rock" && state === "paper") ||
           (gamemach.value === "scissors" && state === "rock") ||
           (gamemach.value === "paper" && state === "scissors")
         ) {
-          run.innerHTML = "loser"
+          run.innerHTML = "loser";
         }
         console.log(gamemach.value);
       };
