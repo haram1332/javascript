@@ -35,8 +35,9 @@
     <button id="change">change</button> <input id="gamemach" /><button
       id="game"
     >
-      nextpage
+      gamebtn
     </button>
+    <button id="initial">initialization</button>
     <div class="color" id="color"></div>
     <div class="div">
       <div id="run"></div>
@@ -59,6 +60,7 @@
       let changecolor = "no";
       let state;
       let random;
+      const initial = document.getElementById("initial");
       const gamemach = document.getElementById("gamemach");
       const game = document.getElementById("game");
       const colorput = document.getElementById("colorput");
@@ -260,7 +262,20 @@
         console.log(state + 1);
         winner();
       };
-
+      const initialization = () => {
+        run.innerHTML = "";
+        btn1.style.visibility = "visible";
+        btn2.style.visibility = "visible";
+        btn3.style.visibility = "visible";
+        document.getElementById("color").style.backgroundColor = "";
+        changecolor = "no";
+        document.getElementById("ground").style.backgroundColor = "cyan";
+        document.getElementById("ground").style.width = "50vw";
+        document.getElementById("ground").style.height = "50vh";
+        colorput.value = "";
+        gamemach.value = "";
+      };
+      initial.addEventListener("click", initialization);
       game.addEventListener("click", next);
       colorbtn.addEventListener("click", color);
       change.addEventListener("click", backcolor);
