@@ -27,6 +27,18 @@
       width: 30px;
       height: 20px;
     }
+    .roulette1 {
+      width: 10px;
+      height: 10px;
+    }
+    .roulette2 {
+      width: 10px;
+      height: 10px;
+    }
+    .roulette3 {
+      width: 10px;
+      height: 10px;
+    }
   </style>
   <body>
     <button id="btn1">btn1</button>
@@ -37,7 +49,11 @@
     >
       gamebtn
     </button>
-    <button id="initial">initialization</button>
+    <button id="initial">initialization</button
+    ><button id="roulette">roulette</button>
+    <div class="roulette1" id="roulette1"></div>
+    <div class="roulette1" id="roulette2"></div>
+    <div class="roulette1" id="roulette3"></div>
     <div class="color" id="color"></div>
     <div class="div">
       <div id="run"></div>
@@ -60,6 +76,8 @@
       let changecolor = "no";
       let state;
       let random;
+      let timeoutID;
+      const roulette = document.getElementById("roulette");
       const initial = document.getElementById("initial");
       const gamemach = document.getElementById("gamemach");
       const game = document.getElementById("game");
@@ -275,6 +293,39 @@
         colorput.value = "";
         gamemach.value = "";
       };
+      const roul1 = () => {
+        setTimeout(function () {
+          roul2();
+        }, 100);
+        document.getElementById("roulette3").style.backgroundColor =
+          "";
+        document.getElementById("roulette1").style.backgroundColor =
+          "chartreuse";
+
+        
+      };
+      const roul2 = () => {
+        setTimeout(function () {
+          roul3();
+        }, 100);
+        document.getElementById("roulette1").style.backgroundColor =
+          "";
+        document.getElementById("roulette2").style.backgroundColor =
+          "chartreuse";
+      };
+      const roul3 = () => {
+        setTimeout(function () {
+          roul1();
+        }, 100);
+        document.getElementById("roulette2").style.backgroundColor =
+          "";
+        document.getElementById("roulette3").style.backgroundColor =
+          "chartreuse";
+      };
+
+ 
+
+      roulette.addEventListener("click", roul1);
       initial.addEventListener("click", initialization);
       game.addEventListener("click", next);
       colorbtn.addEventListener("click", color);
