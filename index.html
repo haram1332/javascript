@@ -50,7 +50,7 @@
       gamebtn
     </button>
     <button id="initial">initialization</button
-    ><button id="roulette">roulette</button>
+    ><button id="roulette">roulette</button><button id="stopbtn">stop</button>
     <div class="roulette1" id="roulette1"></div>
     <div class="roulette1" id="roulette2"></div>
     <div class="roulette1" id="roulette3"></div>
@@ -77,6 +77,7 @@
       let state;
       let random;
       let timeoutID;
+      const stopbtn = document.getElementById("stopbtn");
       const roulette = document.getElementById("roulette");
       const initial = document.getElementById("initial");
       const gamemach = document.getElementById("gamemach");
@@ -293,38 +294,72 @@
         colorput.value = "";
         gamemach.value = "";
       };
+     
+
       const roul1 = () => {
         setTimeout(function () {
           roul2();
         }, 100);
-        document.getElementById("roulette3").style.backgroundColor =
-          "";
+        document.getElementById("roulette3").style.backgroundColor = "";
         document.getElementById("roulette1").style.backgroundColor =
           "chartreuse";
-
-        
+        return;
       };
       const roul2 = () => {
         setTimeout(function () {
           roul3();
         }, 100);
-        document.getElementById("roulette1").style.backgroundColor =
-          "";
+        document.getElementById("roulette1").style.backgroundColor = "";
         document.getElementById("roulette2").style.backgroundColor =
           "chartreuse";
+        return;
       };
       const roul3 = () => {
         setTimeout(function () {
           roul1();
         }, 100);
-        document.getElementById("roulette2").style.backgroundColor =
-          "";
+        document.getElementById("roulette2").style.backgroundColor = "";
         document.getElementById("roulette3").style.backgroundColor =
           "chartreuse";
+        return;
+      };
+      const stopfunction = () => {
+        console.log("stop");
+        if (
+          document.getElementById("roulette1").style.backgroundColor ===
+          "chartreuse"
+        ) {
+          run.innerHTML = "1"
+          document.getElementById("roulette2").style.backgroundColor = "";
+          document.getElementById("roulette3").style.backgroundColor = "";
+          console.log("stop1");
+          return;
+        }
+
+        if (
+          document.getElementById("roulette2").style.backgroundColor ===
+          "chartreuse"
+        ) {
+          run.innerHTML = "2"
+          document.getElementById("roulette1").style.backgroundColor = "";
+          document.getElementById("roulette3").style.backgroundColor = "";
+          console.log("stop2");
+          return;
+        }
+
+        if (
+          document.getElementById("roulette3").style.backgroundColor ===
+          "chartreuse"
+        ) {
+          run.innerHTML = "3"
+          document.getElementById("roulette1").style.backgroundColor = "";
+          document.getElementById("roulette2").style.backgroundColor = "";
+          console.log("stop3");
+          return;
+        }
       };
 
- 
-
+      stopbtn.addEventListener("click", stopfunction);
       roulette.addEventListener("click", roul1);
       initial.addEventListener("click", initialization);
       game.addEventListener("click", next);
