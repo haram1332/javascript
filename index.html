@@ -31,14 +31,6 @@
       width: 10px;
       height: 10px;
     }
-    .roulette2 {
-      width: 10px;
-      height: 10px;
-    }
-    .roulette3 {
-      width: 10px;
-      height: 10px;
-    }
   </style>
   <body>
     <button id="btn1">btn1</button>
@@ -54,6 +46,8 @@
     <div class="roulette1" id="roulette1"></div>
     <div class="roulette1" id="roulette2"></div>
     <div class="roulette1" id="roulette3"></div>
+    <div class="roulette1" id="roulette4"></div>
+    <div class="roulette1" id="roulette5"></div>
     <div class="color" id="color"></div>
     <div class="div">
       <div id="run"></div>
@@ -294,16 +288,14 @@
         colorput.value = "";
         gamemach.value = "";
       };
-     
 
       const roul1 = () => {
         setTimeout(function () {
           roul2();
         }, 100);
-        document.getElementById("roulette3").style.backgroundColor = "";
+        document.getElementById("roulette5").style.backgroundColor = "";
         document.getElementById("roulette1").style.backgroundColor =
           "chartreuse";
-        return;
       };
       const roul2 = () => {
         setTimeout(function () {
@@ -312,16 +304,30 @@
         document.getElementById("roulette1").style.backgroundColor = "";
         document.getElementById("roulette2").style.backgroundColor =
           "chartreuse";
-        return;
       };
       const roul3 = () => {
         setTimeout(function () {
-          roul1();
+          roul4();
         }, 100);
         document.getElementById("roulette2").style.backgroundColor = "";
         document.getElementById("roulette3").style.backgroundColor =
           "chartreuse";
-        return;
+      };
+      const roul4 = () => {
+        setTimeout(function () {
+          roul5();
+        }, 100);
+        document.getElementById("roulette3").style.backgroundColor = "";
+        document.getElementById("roulette4").style.backgroundColor =
+          "chartreuse";
+      };
+      const roul5 = () => {
+        setTimeout(function () {
+          roul1();
+        }, 100);
+        document.getElementById("roulette4").style.backgroundColor = "";
+        document.getElementById("roulette5").style.backgroundColor =
+          "chartreuse";
       };
       const stopfunction = () => {
         console.log("stop");
@@ -329,33 +335,31 @@
           document.getElementById("roulette1").style.backgroundColor ===
           "chartreuse"
         ) {
-          run.innerHTML = "1"
+          run.innerHTML = "1";
           document.getElementById("roulette2").style.backgroundColor = "";
           document.getElementById("roulette3").style.backgroundColor = "";
           console.log("stop1");
-          return;
+          r;
         }
 
         if (
           document.getElementById("roulette2").style.backgroundColor ===
           "chartreuse"
         ) {
-          run.innerHTML = "2"
+          run.innerHTML = "2";
           document.getElementById("roulette1").style.backgroundColor = "";
           document.getElementById("roulette3").style.backgroundColor = "";
           console.log("stop2");
-          return;
         }
 
         if (
           document.getElementById("roulette3").style.backgroundColor ===
           "chartreuse"
         ) {
-          run.innerHTML = "3"
+          run.innerHTML = "3";
           document.getElementById("roulette1").style.backgroundColor = "";
           document.getElementById("roulette2").style.backgroundColor = "";
           console.log("stop3");
-          return;
         }
       };
 
