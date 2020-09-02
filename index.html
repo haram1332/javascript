@@ -36,11 +36,8 @@
     <button id="btn1">btn1</button>
     <button id="btn2">btn2</button>
     <button id="btn3">btn3</button>
-    <button id="change">change</button> <input id="gamemach" /><button
-      id="game"
-    >
-      gamebtn
-    </button>
+    <input id="colorchange" /><button id="change">change</button>
+    <input id="gamemach" /><button id="game">gamebtn</button>
     <button id="initial">initialization</button
     ><button id="roulette">roulette</button><button id="stopbtn">stop</button>
     <div class="roulette1" id="roulette1"></div>
@@ -71,6 +68,7 @@
       let state;
       let random;
       let timeoutID;
+      const colorchange = document.getElementById("colorchange");
       const stopbtn = document.getElementById("stopbtn");
       const roulette = document.getElementById("roulette");
       const initial = document.getElementById("initial");
@@ -89,7 +87,7 @@
       const ground = document.getElementById("ground");
       const change = document.getElementById("change");
       let colorvalue;
-      const backcolor = () => {
+      /* const backcolor = () => {
         if (changecolor === "no") {
           document.getElementById("color").style.backgroundColor = "chartreuse";
           changecolor = "yes";
@@ -102,7 +100,7 @@
           console.log(changecolor + "q");
           return;
         }
-      };
+      };*/
 
       const hid1 = () => {
         btn1.style.visibility = "hidden";
@@ -336,8 +334,6 @@
           "chartreuse"
         ) {
           run.innerHTML = "1";
-          
-          
         }
 
         if (
@@ -345,7 +341,6 @@
           "chartreuse"
         ) {
           run.innerHTML = "2";
-          
         }
 
         if (
@@ -353,30 +348,126 @@
           "chartreuse"
         ) {
           run.innerHTML = "3";
-          
         }
         if (
           document.getElementById("roulette4").style.backgroundColor ===
           "chartreuse"
         ) {
           run.innerHTML = "4";
-          
         }
         if (
           document.getElementById("roulette5").style.backgroundColor ===
           "chartreuse"
         ) {
           run.innerHTML = "5";
-          
+        }
+      };
+      const changecolor1 = () => {
+        colorchange1 = colorchange.value;
+        if (colorvalue === "red") {
+          document.getElementById("color").style.backgroundColor = "red";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "red";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+          console.log(1);
+        }
+        if (colorchange1 === "blue") {
+          console.log("blue");
+          document.getElementById("color").style.backgroundColor = "blue";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "blue";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (colorchange1 === "black") {
+          console.log("black");
+          document.getElementById("color").style.backgroundColor = "black";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "black";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (colorchange1 === "green") {
+          console.log("green");
+          document.getElementById("color").style.backgroundColor = "green";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "green";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (colorchange1 === "yellow") {
+          console.log("yellow");
+          document.getElementById("color").style.backgroundColor = "yellow";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "yellow";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (colorchange1 === "pink") {
+          console.log("pink");
+          document.getElementById("color").style.backgroundColor = "pink";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "pink";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (colorchange1 === "brown") {
+          console.log("brown");
+          document.getElementById("color").style.backgroundColor = "brown";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "brown";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (colorchange1 === "violet") {
+          console.log("violet");
+          document.getElementById("color").style.backgroundColor = "violet";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "violet";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (colorchange1 === "") {
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor =
+              "chartreuse";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
+        if (changecolor === "yes") {
+          document.getElementById("color").style.backgroundColor = "";
+          changecolor = "no";
+          console.log(changecolor + "q");
+          return;
         }
       };
 
+      change.addEventListener("click", changecolor1);
       stopbtn.addEventListener("click", stopfunction);
       roulette.addEventListener("click", roul1);
       initial.addEventListener("click", initialization);
       game.addEventListener("click", next);
       colorbtn.addEventListener("click", color);
-      change.addEventListener("click", backcolor);
+      //change.addEventListener("click", backcolor);
       btn1.addEventListener("click", hid1);
       btn2.addEventListener("click", hid2);
       btn3.addEventListener("click", hid3);
