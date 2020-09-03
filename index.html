@@ -215,6 +215,9 @@
           console.log("violet");
           document.getElementById("ground").style.backgroundColor = "violet";
         }
+        if (colorvalue === "orange") {
+          document.getElementById("ground").style.backgroundColor = "orange";
+        }
       };
       const winner = () => {
         console.log("winnner");
@@ -444,6 +447,16 @@
             return;
           }
         }
+        if (colorchange1 === "orange") {
+          console.log("orange");
+          document.getElementById("color").style.backgroundColor = "orange";
+          if (changecolor === "no") {
+            document.getElementById("color").style.backgroundColor = "orange";
+            changecolor = "yes";
+            console.log(changecolor);
+            return;
+          }
+        }
         if (colorchange1 === "") {
           if (changecolor === "no") {
             document.getElementById("color").style.backgroundColor =
@@ -467,7 +480,6 @@
       initial.addEventListener("click", initialization);
       game.addEventListener("click", next);
       colorbtn.addEventListener("click", color);
-      //change.addEventListener("click", backcolor);
       btn1.addEventListener("click", hid1);
       btn2.addEventListener("click", hid2);
       btn3.addEventListener("click", hid3);
