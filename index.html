@@ -68,6 +68,7 @@
       let state;
       let random;
       let timeoutID;
+      let colornum = "no";
       const colorchange = document.getElementById("colorchange");
       const stopbtn = document.getElementById("stopbtn");
       const roulette = document.getElementById("roulette");
@@ -289,7 +290,15 @@
         colorput.value = "";
         gamemach.value = "";
       };
-
+      const roul = () => {
+        if (colornum === "no") {
+          colornum = "yes";
+          roul1();
+        }
+        if (colornum === "yes") {
+          return;
+        }
+      };
       const roul1 = () => {
         setTimeout(function () {
           roul2();
@@ -476,7 +485,7 @@
 
       change.addEventListener("click", changecolor1);
       stopbtn.addEventListener("click", stopfunction);
-      roulette.addEventListener("click", roul1);
+      roulette.addEventListener("click", roul);
       initial.addEventListener("click", initialization);
       game.addEventListener("click", next);
       colorbtn.addEventListener("click", color);
