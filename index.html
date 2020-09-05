@@ -69,6 +69,7 @@
       let random;
       let timeoutID;
       let colornum = "no";
+      let stoproul = "start";
       const colorchange = document.getElementById("colorchange");
       const stopbtn = document.getElementById("stopbtn");
       const roulette = document.getElementById("roulette");
@@ -300,14 +301,23 @@
         }
       };
       const roul1 = () => {
+        if (stoproul === "stop") {
+          document.getElementById("roulette5").style.backgroundColor = "";
+          return;
+        }
         setTimeout(function () {
           roul2();
         }, 100);
         document.getElementById("roulette5").style.backgroundColor = "";
         document.getElementById("roulette1").style.backgroundColor =
           "chartreuse";
+        console.log("asda");
       };
       const roul2 = () => {
+        if (stoproul === "stop") {
+          document.getElementById("roulette1").style.backgroundColor = "";
+          return;
+        }
         setTimeout(function () {
           roul3();
         }, 100);
@@ -316,6 +326,10 @@
           "chartreuse";
       };
       const roul3 = () => {
+        if (stoproul === "stop") {
+          document.getElementById("roulette2").style.backgroundColor = "";
+          return;
+        }
         setTimeout(function () {
           roul4();
         }, 100);
@@ -324,6 +338,10 @@
           "chartreuse";
       };
       const roul4 = () => {
+        if (stoproul === "stop") {
+          document.getElementById("roulette3").style.backgroundColor = "";
+          return;
+        }
         setTimeout(function () {
           roul5();
         }, 100);
@@ -332,6 +350,10 @@
           "chartreuse";
       };
       const roul5 = () => {
+        if (stoproul === "stop") {
+          document.getElementById("roulette4").style.backgroundColor = "";
+          return;
+        }
         setTimeout(function () {
           roul1();
         }, 100);
@@ -341,6 +363,7 @@
       };
       const stopfunction = () => {
         console.log("stop");
+        stoproul = "stop";
         if (
           document.getElementById("roulette1").style.backgroundColor ===
           "chartreuse"
