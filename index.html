@@ -55,10 +55,10 @@
           </button>
         </div>
         <div class="range2">
-          <button id="1">12</button>
-          <button id="2">12</button>
-          <button id="3">12</button>
-          <button id="4">12</button>
+          <input id="widthchange" />
+          <button id="2">width</button>
+          <input id="heightchange" />
+          <button id="4">height</button>
         </div>
       </div>
     </div>
@@ -171,16 +171,20 @@
         btn1.style.visibility = "hidden";
       }
       const while1 = () => {
-        document.getElementById("ground").style.width = "300px";
+        document.getElementById("ground").style.width = "10vw";
+        document.getElementById("ground").style.height = "10vh";
       };
       const while2 = () => {
-        document.getElementById("ground").style.height = "300px";
+        document.getElementById("ground").style.width = "25vw";
+        document.getElementById("ground").style.height = "25vh";
       };
       const while3 = () => {
-        document.getElementById("ground").style.width = "60vw";
+        document.getElementById("ground").style.width = "75vw";
+        document.getElementById("ground").style.height = "75vh";
       };
       const while4 = () => {
-        document.getElementById("ground").style.height = "60vh";
+        document.getElementById("ground").style.height = "100vw";
+        document.getElementById("ground").style.height = "100vh";
       };
       //document.getElementById("testDiv").style.backgroundColor = "#000000";
       const color = () => {
