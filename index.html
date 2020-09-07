@@ -55,10 +55,8 @@
           </button>
         </div>
         <div class="range2">
-          <input id="widthchange" />
-          <button id="2">width</button>
-          <input id="heightchange" />
-          <button id="4">height</button>
+          <input id="widthchange" /><button id="width">width</button>
+          <input id="heightchange" /><button id="height">height</button>
         </div>
       </div>
     </div>
@@ -70,6 +68,8 @@
       let timeoutID;
       let colornum = "no";
       let stoproul = "start";
+      let chanwidth;
+      let chanheight;
       const colorchange = document.getElementById("colorchange");
       const stopbtn = document.getElementById("stopbtn");
       const roulette = document.getElementById("roulette");
@@ -82,27 +82,13 @@
       const btn1 = document.getElementById("btn1");
       const btn2 = document.getElementById("btn2");
       const btn3 = document.getElementById("btn3");
-      const q1 = document.getElementById("1");
-      const q2 = document.getElementById("2");
-      const q3 = document.getElementById("3");
-      const q4 = document.getElementById("4");
+      const width = document.getElementById("width");
+      const height = document.getElementById("height");
+      const widthchan = document.getElementById("widthchan");
+      const heightchan = document.getElementById("heightchan");
       const ground = document.getElementById("ground");
       const change = document.getElementById("change");
       let colorvalue;
-      /* const backcolor = () => {
-        if (changecolor === "no") {
-          document.getElementById("color").style.backgroundColor = "chartreuse";
-          changecolor = "yes";
-          console.log(changecolor);
-          return;
-        }
-        if (changecolor === "yes") {
-          document.getElementById("color").style.backgroundColor = "";
-          changecolor = "no";
-          console.log(changecolor + "q");
-          return;
-        }
-      };*/
 
       const hid1 = () => {
         btn1.style.visibility = "hidden";
@@ -171,21 +157,12 @@
         btn1.style.visibility = "hidden";
       }
       const while1 = () => {
-        document.getElementById("ground").style.width = "10vw";
-        document.getElementById("ground").style.height = "10vh";
+        document.getElementById("ground").style.width = "";
       };
       const while2 = () => {
-        document.getElementById("ground").style.width = "25vw";
-        document.getElementById("ground").style.height = "25vh";
+        document.getElementById("ground").style.height = "";
       };
-      const while3 = () => {
-        document.getElementById("ground").style.width = "75vw";
-        document.getElementById("ground").style.height = "75vh";
-      };
-      const while4 = () => {
-        document.getElementById("ground").style.height = "100vw";
-        document.getElementById("ground").style.height = "100vh";
-      };
+
       //document.getElementById("testDiv").style.backgroundColor = "#000000";
       const color = () => {
         colorvalue = colorput.value;
@@ -519,10 +496,8 @@
       btn1.addEventListener("click", hid1);
       btn2.addEventListener("click", hid2);
       btn3.addEventListener("click", hid3);
-      q1.addEventListener("click", while1);
-      q2.addEventListener("click", while2);
-      q3.addEventListener("click", while3);
-      q4.addEventListener("click", while4);
+      width.addEventListener("click", while1);
+      height.addEventListener("click", while2);
     </script>
   </body>
 </html>
