@@ -39,13 +39,13 @@
     <input id="colorchange" /><button id="change">change</button>
     <input id="gamemach" /><button id="game">gamebtn</button>
     <button id="initial">initialization</button
-    ><button id="roulette">roulette</button><button id="stopbtn">stop</button><div id="container"  class="style-scope ytd-searchbox">
-      <div id="search-input" class="ytd-searchbox-spt" slot="search-input">
+    ><button id="roulette">roulette</button><button id="stopbtn">stop</button><div id="container"  class="style-scope ytd-searchbox"><div id="search-input" class="ytd-searchbox-spt" slot="search-input">
       <input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" name="search_query"
       tabindex="0" type="text" spellcheck="false" placeholder="검색" aria-label="검색">
+      <div><div id="search-container" class="ytd-searchbox-spt" slot="search-container"><div>
       <div>
-      <div id="search-container" class="ytd-searchbox-spt" slot="search-container"><div>
-      <div>
+      
+      
     <div class="roulette1" id="roulette1"></div>
     <div class="roulette1" id="roulette2"></div>
     <div class="roulette1" id="roulette3"></div>
@@ -68,6 +68,7 @@
     </div>
 
     <script>
+      //밴쿠버 집 거리
       let changecolor = "no";
       let state;
       let random;
@@ -272,20 +273,27 @@
         btn3.style.visibility = "visible";
         document.getElementById("color").style.backgroundColor = "";
         changecolor = "no";
+        colornum = "no";
         document.getElementById("ground").style.backgroundColor = "cyan";
         document.getElementById("ground").style.width = "50vw";
         document.getElementById("ground").style.height = "50vh";
         colorput.value = "";
         gamemach.value = "";
+        document.getElementById("changecolor").style.backgroundColor = "chartreuse";
+
       };
       const roul = () => {
+        console.log("inbtnroul")
         if (colornum === "no") {
           colornum = "yes";
+          stoproul = "start";
+          console.log("inroul")
           roul1();
         }
         if (colornum === "yes") {
           return;
         }
+        
       };
       const roul1 = () => {
         if (stoproul === "stop") {
@@ -350,6 +358,7 @@
       };
       const stopfunction = () => {
         console.log("stop");
+        colornum = "no";
         stoproul = "stop";
         if (
           document.getElementById("roulette1").style.backgroundColor ===
@@ -383,10 +392,13 @@
         ) {
           run.innerHTML = "5";
         }
+        
       };
       const changecolor1 = () => {
         colorchange1 = colorchange.value;
-        if (colorvalue === "red") {
+        console.log(colorchange1)
+        if (colorchange1 === "red") {
+          console.log("red")
           document.getElementById("color").style.backgroundColor = "red";
           if (changecolor === "no") {
             document.getElementById("color").style.backgroundColor = "red";
