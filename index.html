@@ -38,12 +38,14 @@
     <button id="btn3">btn3</button>
     <input id="colorchange" /><button id="change">change</button>
     <input id="gamemach" /><button id="game">gamebtn</button>
-    <button id="initial">initialization</button
-    ><button id="roulette">roulette</button><button id="stopbtn">stop</button><div id="container"  class="style-scope ytd-searchbox"><div id="search-input" class="ytd-searchbox-spt" slot="search-input">
+    <button id="initial">initialization</button>
+    
+    <button id="roulette">roulette</button><button id="stopbtn">stop</button><div id="container"  class="style-scope ytd-searchbox"><div id="search-input" class="ytd-searchbox-spt" slot="search-input">
       <input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" name="search_query"
       tabindex="0" type="text" spellcheck="false" placeholder="검색" aria-label="검색">
       <div><div id="search-container" class="ytd-searchbox-spt" slot="search-container"><div>
       <div>
+
       
       
     <div class="roulette1" id="roulette1"></div>
@@ -236,7 +238,7 @@
         }
         console.log(gamemach.value);
       };
-      /**/
+      /*colorchange*/
       const next = () => {
         state = "";
         console.log(state);
@@ -274,11 +276,13 @@
         document.getElementById("color").style.backgroundColor = "";
         changecolor = "no";
         colornum = "no";
+        stoproul = "stop";
         document.getElementById("ground").style.backgroundColor = "cyan";
         document.getElementById("ground").style.width = "50vw";
         document.getElementById("ground").style.height = "50vh";
         colorput.value = "";
         gamemach.value = "";
+        colorchange.value = ""; 
         document.getElementById("changecolor").style.backgroundColor = "chartreuse";
 
       };
@@ -302,7 +306,7 @@
         }
         setTimeout(function () {
           roul2();
-        }, 100);
+        }, 40);
         document.getElementById("roulette5").style.backgroundColor = "";
         document.getElementById("roulette1").style.backgroundColor =
           "chartreuse";
@@ -315,7 +319,7 @@
         }
         setTimeout(function () {
           roul3();
-        }, 100);
+        }, 40);
         document.getElementById("roulette1").style.backgroundColor = "";
         document.getElementById("roulette2").style.backgroundColor =
           "chartreuse";
@@ -327,7 +331,7 @@
         }
         setTimeout(function () {
           roul4();
-        }, 100);
+        }, 40);
         document.getElementById("roulette2").style.backgroundColor = "";
         document.getElementById("roulette3").style.backgroundColor =
           "chartreuse";
@@ -339,7 +343,7 @@
         }
         setTimeout(function () {
           roul5();
-        }, 100);
+        }, 40);
         document.getElementById("roulette3").style.backgroundColor = "";
         document.getElementById("roulette4").style.backgroundColor =
           "chartreuse";
@@ -351,7 +355,7 @@
         }
         setTimeout(function () {
           roul1();
-        }, 100);
+        }, 40);
         document.getElementById("roulette4").style.backgroundColor = "";
         document.getElementById("roulette5").style.backgroundColor =
           "chartreuse";
