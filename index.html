@@ -40,11 +40,14 @@
     <input id="gamemach" /><button id="game">gamebtn</button>
     <button id="initial">initialization</button>
     
-    <button id="roulette">roulette</button><button id="stopbtn">stop</button><div id="container"  class="style-scope ytd-searchbox"><div id="search-input" class="ytd-searchbox-spt" slot="search-input">
-      <input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" name="search_query"
+    <button id="roulette">roulette</button><button id="stopbtn">stop</button><div id = "test"></div>
+  <input type = "button" onclick = "alert('alert')" value="alert"/>
+    <div id="container"  class="style-scope ytd-searchbox"><div id="search-input" class="ytd-searchbox-spt" slot="search-input">
+        <input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" name="search_query"
       tabindex="0" type="text" spellcheck="false" placeholder="검색" aria-label="검색">
+
       <div><div id="search-container" class="ytd-searchbox-spt" slot="search-container"><div>
-      <div>
+    <div>
 
       
       
@@ -79,6 +82,7 @@
       let stoproul = "start";
       let chanwidth;
       let chanheight;
+      const test = document.getElementById("test")
       const colorchange = document.getElementById("colorchange");
       const stopbtn = document.getElementById("stopbtn");
       const roulette = document.getElementById("roulette");
@@ -98,7 +102,9 @@
       const ground = document.getElementById("ground");
       const change = document.getElementById("change");
       let colorvalue;
+      const clickdiv = () => {
 
+      }
       const hid1 = () => {
         btn1.style.visibility = "hidden";
         run.innerHTML = "hellow";
