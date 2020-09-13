@@ -31,6 +31,10 @@
       width: 10px;
       height: 10px;
     }
+    .nav_item{
+      width: 90px;
+      height: 22px;
+    }
   </style>
   <body>
     <button id="btn1">btn1</button>
@@ -39,16 +43,19 @@
     <input id="colorchange" /><button id="change">change</button>
     <input id="gamemach" /><button id="game">gamebtn</button>
     <button id="initial">initialization</button>
-    
-    <button id="roulette">roulette</button><button id="stopbtn">stop</button><div id = "test"></div>
-  <input type = "button" onclick = "alert('alert')" value="alert"/>
+    <button id="roulette">roulette</button>
+    <button id="stopbtn">stop</button>
+    <input type = "button" onclick = "alert('alert')" value="alert"/>
+    <li class="nav_item">
+      <a href="https://opentutorials.org/course/1375/6620" class="nav" data-clk="svc.cafe">javascript</a>
+      </li>
     <div id="container"  class="style-scope ytd-searchbox"><div id="search-input" class="ytd-searchbox-spt" slot="search-input">
         <input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" name="search_query"
       tabindex="0" type="text" spellcheck="false" placeholder="검색" aria-label="검색">
 
       <div><div id="search-container" class="ytd-searchbox-spt" slot="search-container"><div>
     <div>
-
+<div id = "test"></div>
       
       
     <div class="roulette1" id="roulette1"></div>
@@ -279,6 +286,7 @@
         btn1.style.visibility = "visible";
         btn2.style.visibility = "visible";
         btn3.style.visibility = "visible";
+        document.getElementById("color").style.backgroundColor = "chartreuse";
         document.getElementById("color").style.backgroundColor = "";
         changecolor = "no";
         colornum = "no";
@@ -289,7 +297,7 @@
         colorput.value = "";
         gamemach.value = "";
         colorchange.value = ""; 
-        document.getElementById("changecolor").style.backgroundColor = "chartreuse";
+        
 
       };
       const roul = () => {
