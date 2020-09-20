@@ -35,6 +35,11 @@
       width: 90px;
       height: 22px;
     }
+    .gametest{
+      width: 30px;
+      height: 20px;
+      background-color: orange;
+    }
   </style>
   <body>
     <button id="btn1">btn1</button>
@@ -46,10 +51,14 @@
     <button id="roulette">roulette</button>
     <button id="stopbtn">stop</button>
     <input type = "button" onclick = "alert('alert')" value="alert"/>
-    <a href="https://github.com/" class="nav" data-clk="svc.cafe">javascript</a> <a href="https://coding-factory.tistory.com/180" class="nav" data-clk="svc.cafe">game</a>
+    <a href="https://github.com/" class="nav" data-clk="svc.cafe">javascript</a> <a href="" class="nav" data-clk="svc.cafe">game</a>
     <input id="search" autocapitalize="none" autocomplete="off" autocorrect="off" name="search_query"
       tabindex="0" type="text" spellcheck="false" placeholder="검색" aria-label="검색"> 
        <li class="nav_item"></li><li class="nav_item"></li><li class="nav_item"></li>
+       <div class = "gametest" id = "test"></div><p>
+        <MARQUEE loop ="5" scrollamount="50">game </MARQUEE>
+        <!-- 스크롤의 여백 -->
+          </p>
       
     
       
@@ -57,7 +66,7 @@
       <div><div id="search-container" class="ytd-searchbox-spt" slot="search-container"><div>
     <div>
     
-<div id = "test"></div>
+
       
       
     <div class="roulette1" id="roulette1"></div>
@@ -111,6 +120,7 @@
       const ground = document.getElementById("ground");
       const change = document.getElementById("change");
       let colorvalue;
+      
       const clickdiv = () => {
       
       }
